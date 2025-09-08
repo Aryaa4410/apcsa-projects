@@ -28,7 +28,7 @@ public class Roomba implements Directions {
 
 		World.readWorld(worldName);
 		World.setVisible(true);
-
+		Robot roomba = new Robot(9, 6, East, 100);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
@@ -38,6 +38,72 @@ public class Roomba implements Directions {
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
 		roomba.move();
+		roomba.pickBeeper();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.move();
+		roomba.move();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.move();
+		roomba.pickBeeper();
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+
+
+
+
+
+		
 
 
 		int totalBeepers = 0; // Need to move this somewhere else.
