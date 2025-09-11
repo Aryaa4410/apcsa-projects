@@ -14,6 +14,7 @@ public class Roomba implements Directions{
 		Roomba cleaner = new Roomba();
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
 		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
+
 	}
 
 	// declared here so it is visible in all the methods!
@@ -26,33 +27,31 @@ public class Roomba implements Directions{
         World.readWorld(worldName);
         World.setVisible(true);
 		World.setDelay(15);
-		Robot roomba = new Robot(7, 6, East, 0);
-	boolean moreToClean = true;
-	while (moreToClean) {
+		Robot roomba = new Robot(11, 6, East, 0);
 		
+boolean moreToClean = true;
+	while (moreToClean) {
 		while (roomba.frontIsClear()) {
-			while (roomba.nextToABeeper()) {
+			roomba.move();
+	while (roomba.nextToABeeper()) {
 	roomba.pickBeeper();
 	}
-			roomba.move();
-	}
+}
 	if (roomba.facingEast()){
 	roomba.turnLeft();
+	roomba.turnLeft();
+	roomba.turnLeft();
 	roomba.move();
+	roomba.turnLeft();
+	roomba.turnLeft();
 	roomba.turnLeft();
 }
 else{
 	roomba.turnLeft();
-	roomba.turnLeft();
-	roomba.turnLeft();
 	roomba.move();
 	roomba.turnLeft();
-	roomba.turnLeft();
-	roomba.turnLeft();
 }
 }
-
-
 int totalBeepers = 59;
 		return totalBeepers;
 
