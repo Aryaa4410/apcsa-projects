@@ -26,32 +26,43 @@ public class Roomba implements Directions{
 	public int cleanRoom(String worldName, int startX, int startY) {
         World.readWorld(worldName);
         World.setVisible(true);
-		World.setDelay(15);
+		World.setDelay(10);
 		Robot roomba = new Robot(11, 6, East, 0);
-		
-boolean moreToClean = true;
-	while (moreToClean) {
-		while (roomba.frontIsClear()) {
+		boolean moreToClean = true;
+		while (moreToClean) 
+		{
+			{
+			while (roomba.frontIsClear()) {
 			roomba.move();
-	while (roomba.nextToABeeper()) {
+	while (roomba.nextToABeeper())
 	roomba.pickBeeper();
+	
+}
+	if (roomba.facingEast())
+{
+	roomba.turnLeft();
+	roomba.turnLeft();
+	roomba.turnLeft();
+	if (roomba.frontIsClear())
+	{
+	roomba.move();
+	roomba.turnLeft();
+	roomba.turnLeft();
+	roomba.turnLeft();
+	}
+	else
+	{
+		moreToClean = false;
 	}
 }
-	if (roomba.facingEast()){
-	roomba.turnLeft();
-	roomba.turnLeft();
-	roomba.turnLeft();
-	roomba.move();
-	roomba.turnLeft();
-	roomba.turnLeft();
-	roomba.turnLeft();
-}
-else{
+else
+{
 	roomba.turnLeft();
 	roomba.move();
 	roomba.turnLeft();
 }
 }
+roomba.turnOff();
 int totalBeepers = 59;
 		return totalBeepers;
 
