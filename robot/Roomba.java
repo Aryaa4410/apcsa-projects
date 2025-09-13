@@ -14,24 +14,20 @@ public class Roomba implements Directions
 		String worldName = "robot/basicRoom.wld";
 
 		Roomba cleaner = new Roomba();
-		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
-		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
+		int totalBeepers = cleaner.cleanRoom(worldName, 11, 6);
+		int beeperCount = cleaner.cleanRoom(worldName, 11, 6);
 
 	}
-
-	// declared here so it is visible in all the methods!
-	private Robot roomba;
-
-	// You will need to add many variables!!
-
 
 	public int cleanRoom(String worldName, int startX, int startY) 
 	{
         int sizeOfPile = 0;
 		int stepsTaken = 0;
+		int totalBeepers = 0;
+		
 		World.readWorld(worldName);
         World.setVisible(true);
-		World.setDelay(10);
+		World.setDelay(7);
 		Robot roomba = new Robot(11, 6, East, 0);
 		boolean moreToClean = true;
 		while (moreToClean) 
@@ -40,10 +36,19 @@ public class Roomba implements Directions
 			{
 				roomba.move();
 				stepsTaken++;
+				int beeperCount = 0;
 				while (roomba.nextToABeeper())
 				{
 					roomba.pickBeeper();
-					sizeOfPile++;
+					beeperCount++;
+					System.out.println("beeperCount is "+ beeperCount);
+					if (sizeOfPile < beeperCount)
+					{
+						sizeOfPile = beeperCount;
+						System.out.println("The latest largest pile roomba picked up is "+ sizeOfPile + " beepers");
+					}
+					
+					totalBeepers++;
 			
 				}
 			}
@@ -70,12 +75,12 @@ public class Roomba implements Directions
 				roomba.move();
 				roomba.turnLeft();
 			}
-			System.out.println("The largest pile roomba picked up is "+ sizeOfPile + " beepers");
-			System.out.println("Roomba took a total of "+stepsTaken+" steps");
-			roomba.turnOff();
-			int totalBeepers = 59;
-			return totalBeepers;
-
+			
     	}
+		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
+		System.out.println("The largest pile roomba picked up is "+ sizeOfPile + " beepers");
+		System.out.println("Roomba took a total of "+stepsTaken+" steps");
+		return stepsTaken;
+
 	}
 }
