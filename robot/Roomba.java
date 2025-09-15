@@ -18,6 +18,7 @@ public class Roomba implements Directions
 		int beeperCount = cleaner.cleanRoom(worldName, 11, 6);
 
 	}
+	private Robot roomba;
 
 	public int cleanRoom(String worldName, int startX, int startY) 
 	{
