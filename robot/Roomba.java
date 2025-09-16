@@ -15,7 +15,7 @@ public class Roomba implements Directions
 
 		Roomba cleaner = new Roomba();
 		int totalBeepers = cleaner.cleanRoom(worldName, 11, 6);
-		int beeperCount = cleaner.cleanRoom(worldName, 11, 6);
+		//int beeperCount = cleaner.cleanRoom(worldName, 11, 6);
 
 	}
 	private Robot roomba;
@@ -41,17 +41,15 @@ public class Roomba implements Directions
 				while (roomba.nextToABeeper())
 				{
 					roomba.pickBeeper();
-					beeperCount++;
-					System.out.println("beeperCount is "+ beeperCount);
-					if (sizeOfPile < beeperCount)
-					{
-						sizeOfPile = beeperCount;
-						System.out.println("The latest largest pile roomba picked up is "+ sizeOfPile + " beepers");
-					}
-					
 					totalBeepers++;
-			
+					beeperCount++;
+			System.out.println("beeperCount is "+ beeperCount);
 				}
+				 if (sizeOfPile < beeperCount)
+                   {
+                       sizeOfPile = beeperCount;
+                       System.out.println("The latest largest pile roomba picked up is "+ sizeOfPile + " beepers");
+                   }
 			}
 			if (roomba.facingEast())
 			{
