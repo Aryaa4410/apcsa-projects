@@ -11,7 +11,9 @@ public class Book {
 
     Book() {
         // Empty book - no code needed here.
-    }
+    } 
+   ]
+
 
     // Helper to debug code
     // Prints out a range of lines from a book
@@ -68,14 +70,22 @@ public class Book {
         this.title = title;
         text.clear();
 
-        try {
+        try 
+        {
             URL bookUrl = URI.create(url).toURL();
             // use Scanner to populate the book
             // Scanner can open a file on a URL like this:
             // Scanner(bookUrl.openStream())
             // use: text.add(line) to add a line to the book.
-            Scanner book = new Scanner
-        } catch (IOException ex) {
+            Scanner book = new Scanner(bookUrl.openStream());
+            while(book.hasNextLine())
+            {
+                text.add(book.nextLine())
+            }
+            book.close();
+        } 
+        catch (IOException ex) 
+        {
             ex.printStackTrace();
         }
     }
