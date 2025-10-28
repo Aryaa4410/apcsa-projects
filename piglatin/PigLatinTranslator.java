@@ -48,7 +48,8 @@ public class PigLatinTranslator
         }
         return result;
     }
-
+        // Add additonal private methods here.
+        // For example, 
     private static String translateWord(String input) {
         System.out.println("  -> translateWord('" + input + "')");
 
@@ -104,11 +105,10 @@ public class PigLatinTranslator
 
     }
 
-    // Add additonal private methods here.
-    // For example, 
     
     
-    I had one like this:
+    
+    //I had one like this:
     // private static String capitalizeFirstLetter(String input)
 
 }

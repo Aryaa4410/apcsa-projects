@@ -5,50 +5,62 @@ import java.net.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Book {
+public class Book 
+{
     private String title;
     private ArrayList<String> text = new ArrayList<String>();
 
-    Book() {
+    Book() 
+    {
         // Empty book - no code needed here.
     } 
-   ]
 
 
     // Helper to debug code
     // Prints out a range of lines from a book
-    public void printlines(int start, int length) {
+    public void printlines(int start, int length) 
+    {
         System.out.println("Lines " + start + " to " + (start + length) + " of book: " + title);
-        for (int i = start; i < start + length; i++) {
-            if (i < text.size()) {
+        for (int i = start; i < start + length; i++) 
+        {
+            if (i < text.size()) 
+            {
                 System.out.println(i + ": " + text.get(i));
-            } else {
+            } 
+            else 
+            {
                 System.out.println(i + ": line not in book.");
             }
         }
     }
 
-    String getTitle() {
+    String getTitle() 
+    {
         return title;
     }
 
-    void setTitle(String title) {
+    void setTitle(String title) 
+    {
         this.title = title;
     }
 
-    String getLine(int lineNumber) {
+    String getLine(int lineNumber) 
+    {
         return text.get(lineNumber);
     }
 
-    int getLineCount() {
+    int getLineCount() 
+    {
         return text.size();
     }
 
-    void appendLine(String line) {
+    void appendLine(String line) 
+    {
         text.add(line);
     }
 
-    public void readFromString(String title, String string) {
+    public void readFromString(String title, String string) 
+    {
         // load a book from an input string.
         this.title = title;
         text.clear();
@@ -64,7 +76,8 @@ public class Book {
         //end in.txt
     }
 
-    public void readFromUrl(String title, String url) {
+    public void readFromUrl(String title, String url) 
+    {
         // load a book from a URL.
         // https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
         this.title = title;
@@ -80,7 +93,7 @@ public class Book {
             Scanner book = new Scanner(bookUrl.openStream());
             while(book.hasNextLine())
             {
-                text.add(book.nextLine())
+                text.add(book.nextLine());
             }
             book.close();
         } 
@@ -90,7 +103,25 @@ public class Book {
         }
     }
 
-    void writeToFile(String name) {
+    void writeToFile(String name) 
+    {
+        if(name == null || name.isEmpty())
+        {
+            System.err.println("invalid");
+            return;
+        }
+        try(PrintWriter writer = new PrintWriter(new FileWriter(name)))
+        {
+            for(String line : text)
+            {
+                writer.println(line);
+            }
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
+
         // Add code here to write the contents of the book to a file.
         // Must write to file using provided name.
     }
