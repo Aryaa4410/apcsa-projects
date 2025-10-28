@@ -49,15 +49,24 @@ public class Book {
     public void readFromString(String title, String string) {
         // load a book from an input string.
         this.title = title;
+        text.clear();
+        Scanner insert = new Scanner(string);
+        while (insert.hasNextLine())
+        {
+            text.add(insert.nextLine());
+        }
+        insert.close();
 
         //use Scanner to populate the book
         // use: text.add(line) to add a line to the book.
+        //end in.txt
     }
 
     public void readFromUrl(String title, String url) {
         // load a book from a URL.
         // https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
         this.title = title;
+        text.clear();
 
         try {
             URL bookUrl = URI.create(url).toURL();
@@ -65,6 +74,7 @@ public class Book {
             // Scanner can open a file on a URL like this:
             // Scanner(bookUrl.openStream())
             // use: text.add(line) to add a line to the book.
+            Scanner book = new Scanner
         } catch (IOException ex) {
             ex.printStackTrace();
         }

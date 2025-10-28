@@ -32,11 +32,11 @@ public class PigLatinTranslator
         // The input to this function could be any English string.
         // It may be made up of many words.
         // This method must call translateWord once for each word in the string.
-        Scanner newLine = new Scanner(input);
+        Scanner scanLine = new Scanner(input);
         
-        while(newLine.hasNext())
+        while(scanLine.hasNext())
         {
-            String part = newLine.next();
+            String part = scanLine.next();
             if(result.length() == 0)
             {
                 result = translateWord(part);
@@ -94,11 +94,21 @@ public class PigLatinTranslator
             result += end;
         }
 
+
+
+
+
         return result;
+
+
+
     }
 
     // Add additonal private methods here.
-    // For example, I had one like this:
+    // For example, 
+    
+    
+    I had one like this:
     // private static String capitalizeFirstLetter(String input)
 
 }
