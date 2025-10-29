@@ -79,7 +79,7 @@ public class Book
     public void readFromUrl(String title, String url) 
     {
         // load a book from a URL.
-        // https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
+        //https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
         this.title = title;
         text.clear();
 
