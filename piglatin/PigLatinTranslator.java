@@ -33,7 +33,8 @@ public class PigLatinTranslator
         // It may be made up of many words.
         // This method must call translateWord once for each word in the string.
         Scanner scanLine = new Scanner(input);
-        
+        //while there are lines,the code will loop translation till there are no more lines
+        //translates each word individually then adds together
         while(scanLine.hasNext())
         {
             String part = scanLine.next();
@@ -52,7 +53,7 @@ public class PigLatinTranslator
         // For example, 
     private static String translateWord(String input) {
         System.out.println("  -> translateWord('" + input + "')");
-
+        //recognizes the vowels which change the rules of pig latin
         String result = input;
         String vowels = "aeiouyAEIOUY";
         if(input.length() >= 1)
@@ -87,6 +88,7 @@ public class PigLatinTranslator
                 }
                 result = input.substring(vowelOne) + input.substring(0, vowelOne) +"ay";
             }
+            //ay at the end is basic pig latin rule
             
             if(letterOne.toUpperCase().equals(letterOne))
             {
@@ -94,7 +96,7 @@ public class PigLatinTranslator
             }
             result += end;
         }
-
+            //makes the first letter uppercase
 
 
 
