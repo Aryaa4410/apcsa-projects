@@ -121,6 +121,7 @@ public class Book
         {
             ex.printStackTrace();
         }
+        //connects book to code and makes sure translation happens smoothly
 
         // Add code here to write the contents of the book to a file.
         // Must write to file using provided name.
