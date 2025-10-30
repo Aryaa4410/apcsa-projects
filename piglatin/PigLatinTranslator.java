@@ -35,7 +35,7 @@ public class PigLatinTranslator
         Scanner scanLine = new Scanner(input);
         //while there are lines,the code will loop translation till there are no more lines
         //translates each word individually then adds together
-        while(scanLine.hasNext())
+        while(scanLine.hasNext()) //if there are more lines in the book then it will continue to translate
         {
             String part = scanLine.next();
             if(result.length() == 0)
@@ -47,7 +47,7 @@ public class PigLatinTranslator
                 result = result + " " + translateWord(part);
             }
         }
-        return result;
+        return result; //returns the translated word
     }
         // Add additonal private methods here.
         // For example, 
@@ -55,20 +55,20 @@ public class PigLatinTranslator
         System.out.println("  -> translateWord('" + input + "')");
         //recognizes the vowels which change the rules of pig latin
         String result = input;
-        String vowels = "aeiouyAEIOUY";
+        String vowels = "aeiouyAEIOUY"; // if the word starts with a vowel this is what happens
         if(input.length() >= 1)
         {
             String letterOne = input.substring(0, 1);
             if(letterOne.toUpperCase().equals (letterOne))
             {
-                input = input.substring( 0,1).toLowerCase() + input.substring(1);
+                input = input.substring( 0,1).toLowerCase() + input.substring(1); // makes the first letter of the word uppercase
             }
 
             String end = "";
             if(input.substring(input.length()-1).equals("."))
             {
                 input = input.substring(0,input.length()-1);
-                end = ".";
+                end = "."; //adds a period at the end of a sentence
             }
 
             if(vowels.indexOf(input.substring(0, 1)) >0)
