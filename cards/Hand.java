@@ -57,8 +57,4 @@ public class Hand
         }
        return result.trim();
    }
-
-
-
- 
 }
