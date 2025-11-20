@@ -1,6 +1,7 @@
 package cards;
 
-public class Deck {
-
+public class Deck 
+{
+private int
 
 }

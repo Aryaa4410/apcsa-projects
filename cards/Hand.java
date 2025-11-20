@@ -1,5 +1,22 @@
 package cards;
 
-public class Hand {
+public class Hand 
+{
+    private int maxCards;
+
+    public Hand(int maxCards)
+    {
+        this.maxCards = maxCards;
+    }
+
+    public int add()
+    {
+
+    }
+
+    public int length()
+    {
+        return length;
+    }
 
 }
