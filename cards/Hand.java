@@ -19,4 +19,18 @@ public class Hand
         return length;
     }
 
+    public int get()
+    {
+
+    }
+
+    public int remove()
+    {
+
+    }
+
+    public String toString()
+    {
+        
+    }
 }
