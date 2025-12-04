@@ -1,5 +1,5 @@
 package gol;
-
+//for commit delete later
 import java.util.Arrays;
 
 public class GameOfLife implements Board {
