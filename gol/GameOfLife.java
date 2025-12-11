@@ -9,7 +9,7 @@ public class GameOfLife implements Board {
 
     public GameOfLife(int x, int y)
     {
-       board = new int[x][y];
+       board = new int[x][y]; // constructor for 2d array give x and y size
     }
      
     public void set(int x, int y, int[][] data) {
@@ -48,9 +48,9 @@ public class GameOfLife implements Board {
                     }
                 } else {
                     if (neighbors == 3) {
-                        next[x][y] = 1;
+                        next[x][y] = 1;//if there are 3 neighbors then the cell is alive
                     } else {
-                        next[x][y] = 0;
+                        next[x][y] = 0; // if there are less than 3 neighbors then the cell is dead
                     }
                 }
             }
