@@ -21,6 +21,9 @@ public class GameOfLife implements Board {
     }
     // Run the simulation for a number of turns
     public void run(int turns) {
+        for (int t = 0; t < turns; t++) {
+            step();
+        }
     }
 
     // Step the simulation forward one turn.
