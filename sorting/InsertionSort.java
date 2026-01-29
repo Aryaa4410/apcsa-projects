@@ -11,8 +11,12 @@ public class InsertionSort implements Sorter
        {
         int currentValue = input [i];
        
-       int j = i-1;
-       while(j>=0 && input [j] > currentValue)
+        int j = i-1;
+        while(j>=0 && input [j] > currentValue)
+        {
+            input[j+1] = input[j];
+            j--;
+        }
        }
     }
 }

@@ -5,7 +5,7 @@ public class SelectionSort implements Sorter {
     public void sort(int[] input) 
     {
         System.out.println("Selection Sort!!!");
-        int length = input.length();
+        int length = input.length;
         for(int i=0; i< length; i++)
         {
             int min = input[i];
@@ -19,7 +19,6 @@ public class SelectionSort implements Sorter {
                 }
             }
         }
-        swap(input, i, indexOfMin);   
     }
     public static void swap(int[]input, int a, int b)
     {
