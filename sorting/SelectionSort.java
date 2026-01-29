@@ -4,6 +4,7 @@ public class SelectionSort implements Sorter {
 
     public void sort(int[] input) 
     {
+        System.out.println("Selection Sort!!!");
         int length = input.length();
         for(int i=0; i< length; i++)
         {
@@ -26,5 +27,4 @@ public class SelectionSort implements Sorter {
         input[a] = input[b];
         input[b] = temp;    
     }
-    System.out.println("Selection Sort!!!");
 }
