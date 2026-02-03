@@ -6,11 +6,11 @@ public class SelectionSort implements Sorter {
     {
         System.out.println("Selection Sort!!!");
         int length = input.length;
-        for(int i=0; i< length; i++)
+        for(int i=0; i< length-1; i++)
         {
             int min = input[i];
             int indexOfMin = i;
-            for (int j = i+1; j<length-1; j++)
+            for (int j = i+1; j<length; j++)
             {
                 if(input[j]<min)
                 {
@@ -18,6 +18,7 @@ public class SelectionSort implements Sorter {
                     indexOfMin = j;
                 }
             }
+            swap(input, i, indexOfMin);
         }
     }
     public static void swap(int[]input, int a, int b)
