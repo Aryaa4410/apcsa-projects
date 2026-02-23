@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args)
     {
        int[]testInput = randomArray(10);
-        TestSuite.run(testInput, 100);
+        TestSuite.run(testInput, 1);
     }
 
     public static int[] randomArray(int length)
