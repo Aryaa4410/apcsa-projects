@@ -17,7 +17,7 @@ public class IrregularPolygon {
         myPolygon.add(aPoint);
     }
 
-    public double perimeter() {\
+    public double perimeter() {
         double sum = 0;
         for(int i = 0; i < myPolygon.size(); i++)
         {
@@ -38,8 +38,17 @@ public class IrregularPolygon {
     public double area() {
         // TODO: Calculate the area.
         Double area = 0.0;
+        double first = 0;
+        double second = 0;
+        for (int i = 0; i < myPolygon.size(); i++) 
+        {
+            if (i == myPolygon.size() - 1)
+            {
+                first += myPolygon.get(i).x * myPolygon.get(0).y;
+                second += myPolygon.get(i).y * myPolygon.get(0).x;
+            }
         return area;
-    }
+        }
 
     public void draw()
     {
