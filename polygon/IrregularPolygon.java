@@ -35,7 +35,8 @@ public class IrregularPolygon {
         return sum;
     }
 
-    public double area() {
+    public double area() 
+    {
         // TODO: Calculate the area.
         Double area = 0.0;
         double first = 0;
@@ -52,16 +53,20 @@ public class IrregularPolygon {
             second += myPolygon.get(i).y * myPolygon.get(i + 1).x;
         }
         return Math.abs((first - second) / 2);
+    }
 
     public void draw()
     {
         // Wrap the DrawingTool in a try/catch to allow development without need for graphics.
-        try {
+        try 
+        {
             // TODO: Draw the polygon.
             // Documents: https://pavao.org/compsci/gpdraw/html/gpdraw/DrawingTool.html
-            //DrawingTool myDrawingTool = new DrawingTool(new SketchPad(500, 500));
-            //myDrawingTool.move(50, 50);
-        } catch (java.awt.HeadlessException e) {
+            DrawingTool myDrawingTool = new DrawingTool(new SketchPad(500, 500));
+            myDrawingTool.move(50, 50);
+        } 
+        catch (java.awt.HeadlessException e) 
+        {
             System.out.println("Exception: No graphics support available.");
         }
     }
