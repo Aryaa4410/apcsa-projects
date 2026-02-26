@@ -13,7 +13,7 @@ public class IrregularPolygon {
     // public methods
     public void add(Point2D.Double aPoint)
     {
-        // TODO: Add a point to the IrregularPolygon.
+        // todo: Add a point to the IrregularPolygon.
         myPolygon.add(aPoint);
     }
 
@@ -31,13 +31,13 @@ public class IrregularPolygon {
             Point2D.Double secondPoint = myPolygon.get(i+1);
             sum += point.distance(secondPoint);
         }
-        // TODO: Calculate the perimeter.
+        // todo: Calculate the perimeter.
         return sum;
     }
 
     public double area() 
     {
-        // TODO: Calculate the area.
+        // todo: Calculate the area.
         Double area = 0.0;
         double first = 0;
         double second = 0;
@@ -60,7 +60,7 @@ public class IrregularPolygon {
         // Wrap the DrawingTool in a try/catch to allow development without need for graphics.
         try 
         {
-            // TODO: Draw the polygon.
+            // todo: Draw the polygon.
             // Documents: https://pavao.org/compsci/gpdraw/html/gpdraw/DrawingTool.html
             DrawingTool myDrawingTool = new DrawingTool(new SketchPad(500, 500));
             myDrawingTool.move(50, 50);
