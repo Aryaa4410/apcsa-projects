@@ -63,7 +63,15 @@ public class IrregularPolygon {
             // todo: Draw the polygon.
             // Documents: https://pavao.org/compsci/gpdraw/html/gpdraw/DrawingTool.html
             DrawingTool myDrawingTool = new DrawingTool(new SketchPad(500, 500));
-            myDrawingTool.move(50, 50);
+
+            myDrawingTool.up();
+            myDrawingTool.move(x, y);
+            myDrawingTool.down();
+
+            for (Point2D.Double point : myPolygon) {
+                myDrawingTool.move(point.x, point.y);
+            }
+            myDrawingTool.move(x,y);
         } 
         catch (java.awt.HeadlessException e) 
         {
