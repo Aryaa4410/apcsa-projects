@@ -49,7 +49,15 @@ public class TowerModel {
     public void move(int source, int destination)
     {
         System.out.println("Move #" + ++moveCounter + " from " + source + " to " + destination);
-        // TODO!!
+        int disk = towers[source].pop();
+        // check if move is valid
+       if (!towers[destination].isEmpty() && towers[destination].peek() < disk)
+       {
+           throw new IllegalArgumentException("Invalid move: cannot place larger disk on smaller disk");
+       }
+
+
+towers[destination].push(disk);
     }
 
     // Helper method to nicely print the current model state.
