@@ -48,4 +48,9 @@ public class IntegerStack {
     {
         return stack[index];
     }
+
+    public boolean isEmpty() {
+        // todo: Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+    }
 }
