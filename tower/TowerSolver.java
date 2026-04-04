@@ -20,23 +20,16 @@ public class TowerSolver {
     //
     // [ solve method here]
     //
-    public void Solve()
+    private void solve(int n, int start, int end, int added) 
     {
-      
-    }
-    private void solve(int n, int start, int end, int added)
-    {
-        if (n == 1)
-        {
+        if (n == 1) 
+            {
             model.move(start, end);
             return;
-        }
-
+            }
 
         solve(n - 1, start, added, end);
         model.move(start, end);
         solve(n - 1, added, end, start);
-
-
     }
 }
