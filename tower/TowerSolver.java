@@ -14,12 +14,16 @@ public class TowerSolver {
         // Call the missing solve method (not this one)
         solve(model.getHeight(), 0, 2, 1);
     }
+    public solve()
+    {
+      
+    }
 
     // Create an overloaded solve(...) method
     // This new method will be recursive (call itself)
     //
     // [ solve method here]
     //
-    
+
 
 }
